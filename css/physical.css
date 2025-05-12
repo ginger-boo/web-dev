@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  font-family: "Roboto Slab";
+  margin: 0;
+  padding: 0;
+  background-color:  #e6e6df;
+  text-align: center;
+  margin: auto;
+  font-size: large;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#header {
+  width: 100%; /* Full width to cover the browser */
+  text-align: center;
+  padding: 200px 0; /* Centered padding */
+  background-image: url("../images/physical.jpeg");
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  color: #fff;
+  text-shadow: 3px 3px 3px darkslategrey;
+  position: relative;
+  font-size: xx-large;
+}
+
+.animated-text {
+  display: inline-block; /* Ensure that the element only takes up as much width as needed */
+  animation: typewriter 1.5s steps(30) 1s 1 normal both, blinkCursor 500ms steps(30) infinite normal;
+  font-size: 100%; /* Adjust size as needed */
+  margin: 0;
+  overflow: hidden; /* Ensure text doesn't overflow its container */
+  white-space: nowrap; /* Keep text on a single line */
+  border-right: 3px solid #fff; /* Simulate a cursor */
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #fff; }
+  to { border-right-color: transparent; }
+}
+
+nav {
+  position: fixed; /* Fix the navbar in position */
+  top: 0px; /* Adjust this value based on the height of your search bar */
+  width: 100%; /* Full width of the viewport */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background-color: #0c183b; /* Background color of the navbar */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #125883;
+  border: 1px solid #125883;
+  border-radius: 5px;
+  width: 120px; /* Set a fixed width for all buttons */
+  text-align: center; /* Center the text inside the buttons */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+nav a:hover {
+  background-color: #113c56;
+  border: 1px solid #113c56;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure content is not hidden under the fixed navbar */
+#content {
+  padding-top: 80px; /* Adjust this value based on the height of your search bar and navbar */
+}
+
+
+section, h2{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible, h2{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 80px;
+  margin-bottom: 10px; /* Adjust this value to control space below the heading */
+}
+
+
+.slide-in {
+  width: 300px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+ #physical, #diet, #sleep {
+  padding-top: 50px;
+}
+
+
+#impt {
+  padding-top:50px;
+  opacity: 1; /* Ensure the opacity is fully visible */
+  transition: opacity 0.5s ease-out; /* Optional: Add transition effect if needed */
+  font-size: 150%;
+}
+
+
+
+.desc {
+  font-size: 80%;
+  margin-top: 0; /* Remove top margin to bring it closer to the heading */
+}
+
+h3 {
+  font-size: 70px;
+}
+
+#physical, #diet, #sleep {
+  font-size: 150%;
+}
+
+#jogging {
+  padding-top: 50px;
+}
+
+#jogging-images img {
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#jogging-images {
+  gap: 10px; /* Space between images */
+}
+
+#jogging-images img:first-child {
+  height: 300px; /* Maintain aspect ratio */
+  width: 525px; /* Adjust width of images */
+}
+
+#jogging-images img:nth-child(2) {
+  width: 300px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+#swimming-images img {
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#swimming-images img:first-child {
+  width: 300px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+#swimming-images img:nth-child(2) {
+  width: 525px; /* Adjust width of images */
+  height: 300px; /* Maintain aspect ratio */
+}
+ 
+
+#cycling {
+  margin-bottom: 0; /* Remove any extra margin below the heading */
+  padding-bottom: 0; /* Remove any extra padding below the heading */
+}
+
+#cycling h3 {
+  margin-bottom: 40px; /* Reduce the space between the heading and images */
+}
+
+#cycling img {
+  width: 300px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+  margin-bottom: 100px; /* Reduce the space between the heading and images */
+}
+
+#fun-image img {
+  max-width: 100%; /* Ensure the image scales correctly */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Avoid inline spacing issues */
+}
+
+
+.funfact {
+  display: block; /* Ensure the element takes up the full width of its container */
+  margin-bottom: 10px; /* Adjust the space below the .funfact element */
+  font-size: 200%;
+  padding-bottom: 0px;
+}
+
+.quote {
+  display: block; /* Ensure the element takes up the full width of its container */
+  font-size: 200%;
+}
+
+#diet h2 {
+  margin-bottom: 10px; /* Reduce the space between the heading and images */
+}
+
+#physical h2 {
+  margin-bottom: 10px; /* Reduce the space between the heading and images */
+}
+
+#diet img {
+  width: 900px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+  margin-bottom: 100px; /* Reduce the space between the heading and images */
+}
+
+
+
+#reg-images img {
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+  width: 400px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+#food-images img {
+  width: 400px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+
+#water-images img {
+  width: 400px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#food-content h3, #reg-content h3, #water-content h3 {
+  margin-bottom: 10px;
+}
+
+#sleep img {
+  width: 300px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+  margin-bottom: 100px; /* Reduce the space between the heading and images */
+}
+
+
+
+.fact-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.card-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  margin: 0 20px; /* Increase spacing between cards */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0.5; /* Default fade effect */
+}
+
+.card.active {
+  transform: scale(1.2); /* Enlarge the active card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow for the active card */
+  z-index: 10; /* Bring the active card to the front */
+  opacity: 1; /* Full opacity for the active card */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+#sleep p {
+  padding-top: 40px;
+}
+
+.gif {
+  margin-top: 0px; /* Adjust the value as needed */
+  width: 650px;
+  height:auto;
+}
+

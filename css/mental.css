@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body {
+  font-family: "Roboto Slab";
+  margin: 0;
+  padding: 0;
+  background-color: #e6e6df;
+  text-align: center;
+  margin: auto;
+  font-size: large;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#header {
+  width: 100%; /* Full width to cover the browser */
+  text-align: center;
+  padding: 200px 0; /* Centered padding */
+  background-image: url("../images/mental.jpeg");
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  color: #fff;
+  text-shadow: 3px 3px 3px darkslategrey;
+  position: relative;
+  font-size: xx-large;
+}
+
+.animated-text {
+  display: inline-block; /* Ensure that the element only takes up as much width as needed */
+  animation: typewriter 1.5s steps(30) 1s 1 normal both, blinkCursor 500ms steps(30) infinite normal;
+  font-size: 100%; /* Adjust size as needed */
+  margin: 0;
+  overflow: hidden; /* Ensure text doesn't overflow its container */
+  white-space: nowrap; /* Keep text on a single line */
+  border-right: 3px solid #fff; /* Simulate a cursor */
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #fff; }
+  to { border-right-color: transparent; }
+}
+
+nav {
+  position: fixed; /* Fix the navbar in position */
+  top: 0px; /* Adjust this value based on the height of your search bar */
+  width: 100%; /* Full width of the viewport */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background-color: #0c183b; /* Background color of the navbar */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #125883;
+  border: 1px solid #125883;
+  border-radius: 5px;
+  width: 120px; /* Set a fixed width for all buttons */
+  text-align: center; /* Center the text inside the buttons */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+nav a:hover {
+  background-color: #113c56;
+  border: 1px solid #113c56;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure content is not hidden under the fixed navbar */
+#content {
+  padding-top: 80px; /* Adjust this value based on the height of your search bar and navbar */
+}
+
+#meditation, #yoga, #games, #journalling, #hobbies, #music {
+  padding-top: 50px;
+}
+
+
+section, h2{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible, h2{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 80px;
+  margin-bottom: 5px; /* Reduce the space below all h2 elements */
+  padding-bottom: 0; /* Ensure no padding is adding extra space */
+  line-height: 1.2; /* Adjust line-height to control vertical spacing */
+}
+
+#cool {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+
+
+#impt  {
+  padding-top:50px;
+  opacity: 1; /* Ensure the opacity is fully visible */
+  transition: opacity 0.5s ease-out; /* Optional: Add transition effect if needed */
+}
+
+#intro, #meditation-content, #yoga-content, #games-content, #memory-game, #journalling-content, #hobbies-content, #music-content {
+  font-size: 150%;
+}
+
+.desc {
+  font-size: 80%;
+  margin-top: 5px; /* Reduce the space above all span elements */
+  padding-top: 0; /* Ensure no padding is adding extra space */
+}
+
+.slide-in {
+  width: 300px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+#meditation, #yoga, #games, #journalling, #hobbies, #music {
+  font-size: 100%;
+}
+
+
+#meditation-images img {
+  width:300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+
+.extra-tips {
+  text-align: center; /* Center text within the .extra-tips div */
+  margin-top: 20px; /* Add some space above the extra tips */
+  width: 100%; /* Ensure it takes the full width */
+}
+
+#yoga-images img {
+  width:300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+#memory-game-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adds space between images */
+}
+
+#memory-game-images img {
+  width: 100px;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+/* Expand the middle image on hover */
+#memory-game-images a img:hover {
+  transform: scale(1.1); /* Scale up the image to 1.5 times its size */
+}
+
+
+.game-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+.card-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+  margin: 0 20px; /* Increase spacing between cards */
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 0.5; /* Default fade effect */
+}
+
+.card.active {
+  transform: scale(1.2); /* Enlarge the active card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow for the active card */
+  z-index: 10; /* Bring the active card to the front */
+  opacity: 1; /* Full opacity for the active card */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+#memory-game-images img {
+  width:300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+
+#hobby-table {
+  display: flex;
+  justify-content: center; /* Center the table horizontally */
+  margin-top: 20px; /* Add some margin at the top */
+}
+
+#hobby-table table {
+  border-collapse: collapse; /* Collapse borders for a cleaner look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a 3D effect */
+  width: 80%; /* Adjust table width as needed */
+  max-width: 1000px; /* Optional: Set a maximum width for large tables */
+}
+
+#hobby-table caption {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333; /* Dark text for caption */
+  font-weight: bold; /* Bold caption */
+}
+
+#hobby-table th {
+  background-color: #b0d4f1; /* Light blue header */
+  color: #333; /* Dark text for contrast */
+  padding: 15px;
+  border: 1px solid #081233; /* Dark blue border */
+  text-align: center; /* Center text in header */
+}
+
+#hobby-table td {
+  padding: 15px;
+  border: 1px solid #081233; /* Dark blue border */
+  text-align: center; /* Center text in cells */
+}
+
+
+#hobby-table td:hover {
+  background-color: #e8f4fc; /* Light blue background on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+
+#hobby-images {
+  padding-top: 50px;
+  overflow: hidden; /* Hide overflow to create a scrolling effect */
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  width: 100%; /* Full width for container */
+  position: relative; /* Set relative positioning */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+.scrolling-container {
+  display: flex; /* Use flexbox to align images in a line */
+  animation: scroll-left 20s linear infinite; /* Continuous scrolling animation */
+  white-space: nowrap; /* Ensure images stay in a single line */
+}
+
+.images-wrapper {
+  display: flex; /* Align images in a row */
+}
+
+#hobby-images img {
+  height: auto; /* Maintain aspect ratio */
+  width: 200px; /* Adjust width as needed */
+  margin-right: 0; /* Remove margin between images */
+  border-radius: 0; /* Ensure no rounded edges */
+
+}
+
+/* Define the animation for scrolling left */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0); /* Start at the original position */
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by 50% of the container’s width */
+  }
+}
+
+
+#journalling-images img {
+  width:300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#music-images img {
+  margin-top: 20px;
+  width:300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#music-content {
+  margin-bottom: 10px; /* Adjust this value to decrease space */
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove any padding */
+  margin: 0 auto; /* Center the content */
+  margin-bottom: 50px;
+}
+
+#music-gallery {
+  position: relative; /* Positioning for controls */
+  overflow: hidden; /* Hide overflowing content */
+  width: 700px; /* Set width for the gallery */
+  height: auto; /* Set height for the gallery */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for a 3D effect */
+  background-color: #fff; /* Optional: Background color for gallery */
+  border-radius: 10px; /* Optional: Rounded corners */
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.music-item {
+  display: none; /* Hide all items by default */
+  text-align: center; /* Center text and image */
+  transition: opacity 0.5 ease; /* Transition for opacity change */
+}
+
+.music-item.active {
+  display: block; /* Show active item */
+  opacity: 1; /* Fade in active item */
+}
+
+.music-item .song-title {
+  font-size: 1.2em; /* Make the song title larger */
+  font-weight: bold; /* Optional: Make the song title bold */
+  margin-bottom: 5px; /* Space below the song title */
+  margin-top: 20px; /* Remove top margin to decrease space above the song title */
+}
+
+.music-item .artist-name {
+  font-size: 1em; /* Adjust the size of the artist name */
+  color: #555; /* Optional: Make the artist name a bit lighter */
+  margin-top: 20px; /* Remove top margin if any */
+}
+
+.music-item img {
+  width: 100%; /* Make image fit the container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 5px; /* Decrease the space between the image and the song title */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+#music-gallery {
+  position: relative;
+  overflow: hidden;
+  width: 700px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add padding for spacing */
+}
+
+#progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Set a maximum width for larger screens */
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+#current-time,
+#total-duration {
+  font-size: 0.9em; /* Adjust font size for readability */
+  margin: 0 10px; /* Margin to separate from progress bar */
+}
+
+#progress-bar-container {
+  flex-grow: 1; /* Allow the progress bar container to take up remaining space */
+  height: 5px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 0 10px; /* Margin between time and progress bar */
+  position: relative;
+}
+
+#progress-bar {
+  height: 5px;
+  width: 0; /* Initial width for progress */
+  background-color: #125883;
+  border-radius: 5px;
+  transition: width 0.1s linear; /* Smooth transition */
+  flex-grow: 1; /* Allow the bar to take up available space */
+}
+
+
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Space above the control buttons */
+  gap: 25px; /* Increase space between buttons if needed */
+}
+
+#controls button {
+  background-color: #ffffff;
+  color: #125883;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px; /* Increase padding for bigger buttons */
+  cursor: pointer;
+  font-size: 16px; /* Increase font size */
+  transition: color 0.3s;
+}
+
+#controls button:hover {
+  color: #113c56;
+}
+
+
+#controls i {
+  font-size: 40px; /* Adjust icon size */
+}
+
+/* transition: width 0.1s linear; Smooth transition */

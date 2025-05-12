@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  font-family: "Roboto Slab";
+  margin: 0;
+  padding: 0;
+  background-color: #e6e6df;
+  text-align: center;
+  margin: auto;
+  font-size: large;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+#header {
+  width: 100%; /* Full width to cover the browser */
+  text-align: center;
+  padding: 200px 0; /* Centered padding */
+  background-image: url("../images/mainpage bg.jpg");
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  color: #fff;
+  text-shadow: 3px 3px 3px darkslategrey;
+  position: relative;
+  font-size: xx-large;
+}
+
+.animated-text {
+  display: inline-block; /* Ensure that the element only takes up as much width as needed */
+  animation: typewriter 1.5s steps(30) 1s 1 normal both, blinkCursor 500ms steps(30) infinite normal;
+  font-size: 100%; /* Adjust size as needed */
+  margin: 0;
+  overflow: hidden; /* Ensure text doesn't overflow its container */
+  white-space: nowrap; /* Keep text on a single line */
+  border-right: 3px solid #fff; /* Simulate a cursor */
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #fff; }
+  to { border-right-color: transparent; }
+}
+
+
+body.fade-in {
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a color overlay */
+}
+
+#search-bar {
+  padding: 10px;
+  background-color: #f1f1f1; /* Light background for the search bar */
+  text-align: center;
+  width: 100%;
+}
+
+/* Style for the navbar */
+nav {
+  position: fixed; /* Fix the navbar in position */
+  top: 0px; /* Adjust this value based on the height of your search bar */
+  width: 100%; /* Full width of the viewport */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background-color: #0c183b; /* Background color of the navbar */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #125883;
+  border: 1px solid #125883;
+  border-radius: 5px;
+  width: 120px; /* Set a fixed width for all buttons */
+  text-align: center; /* Center the text inside the buttons */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+nav a:hover {
+  background-color: #113c56;
+  border: 1px solid #113c56;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure content is not hidden under the fixed navbar */
+#content {
+  padding-top: 80px; /* Adjust this value based on the height of your search bar and navbar */
+}
+
+section, h2{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible, h2{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 50px;
+}
+.slide-in {
+  width: 300px; /* Set a fixed width */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+
+#diff, #whyimpt, #factors, #howto {
+  padding-top: 100px;
+}
+
+#desc, #diff, #whyimpt, #howto {
+  font-size: 150%;
+  }
+  
+  
+#diff-images img {
+  width: 300px; /* Adjust width of images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+
+#impt-images img {
+  width: 300px;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+#howto img {
+  width: 800px;
+  height: 400px;
+}
+
+/* Container for the card stack */
+.card-stack {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto the next line */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards horizontally */
+  padding: 20px; /* Optional: Add padding around the stack */
+}
+
+/* Individual card */
+.card {
+  width: 400px; /* Fixed width for each card */
+  height: 400px; /* Fixed height for each card */
+  perspective: 1000px; /* Create perspective for 3D effect */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: 0; /* Remove default margin */
+  position: relative; /* Ensure card is positioned relative to the container */
+  padding: 20px;
+}
+
+/* Card inner element */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Enable 3D transformation */
+  transition: transform 0.6s; /* Transition duration */
+}
+
+/* Flip effect for cards */
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Rotate on flip */
+}
+
+/* Front and back of the card */
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden; /* Hide back face when flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px; /* Optional: Rounded corners for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow for a 3D effect */
+}
+
+/* Specific styles for card front */
+.card-front {
+  background-color: rgba(255, 255, 255, 0.839); /* Slightly transparent white */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  padding: 20px; /* Ensure padding is accounted for */
+}
+
+/* Specific styles for card back */
+.card-back {
+  background-color: rgb(218, 216, 216); /* Light grey background */
+  transform: rotateY(180deg); /* Rotate back face */
+}
+
+/* Optional: Additional styling for images */
+.card-front img {
+  margin-top: 10px; /* Space above the image */
+  max-width: 80%; /* Ensure image doesn't overflow */
+  max-height: 70%; /* Ensure image fits within card */
+}
+
+/* Optional: Additional styling for card title */
+.card-front h3 {
+  margin-bottom: 5px; /* Space between title and image */
+  color: rgb(0, 0, 0); /* Ensure text visibility */
+  z-index: 1; /* Ensure title is above image */
+}
+
+
+/* form.css */
+
+.form-container {
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.form-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top:10px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  background-color:  #125883;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #113c56;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-align: left;
+}
+

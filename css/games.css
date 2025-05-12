@@ -1,0 +1,199 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto Slab";
+  margin: 0;
+  padding: 0;
+  background-color: #e6e6df;
+  text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-size: large;
+}
+
+#header {
+  width: 100%; /* Full width to cover the browser */
+  text-align: center;
+  padding: 200px 0; /* Centered padding */
+  background-image: url("../images/game.jpeg");
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  color: #fff;
+  text-shadow: 3px 3px 3px darkslategrey;
+  position: relative;
+  font-size: xx-large;
+}
+
+.animated-text {
+  display: inline-block; /* Ensure that the element only takes up as much width as needed */
+  animation: typewriter 1.5s steps(30) 1s 1 normal both, blinkCursor 500ms steps(30) infinite normal;
+  font-size: 100%; /* Adjust size as needed */
+  margin: 0;
+  overflow: hidden; /* Ensure text doesn't overflow its container */
+  white-space: nowrap; /* Keep text on a single line */
+  border-right: 3px solid #fff; /* Simulate a cursor */
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: #fff; }
+  to { border-right-color: transparent; }
+}
+
+nav {
+  position: fixed; /* Fix the navbar in position */
+  top: 0px; /* Adjust this value based on the height of your search bar */
+  width: 100%; /* Full width of the viewport */
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
+  background-color: #0c183b; /* Background color of the navbar */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #125883;
+  border: 1px solid #125883;
+  border-radius: 5px;
+  width: 120px; /* Set a fixed width for all buttons */
+  text-align: center; /* Center the text inside the buttons */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+nav a:hover {
+  background-color: #113c56;
+  border: 1px solid #113c56;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+/* Ensure content is not hidden under the fixed navbar */
+#content {
+  padding-top: 80px; /* Adjust this value based on the height of your search bar and navbar */
+}
+
+
+h1 {
+  margin: 20px;
+}
+
+#games-images {
+  padding-top: 50px;
+  overflow: hidden; /* Hide overflow to create a scrolling effect */
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  width: 100%; /* Full width for container */
+  position: relative; /* Set relative positioning */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for a 3D effect */
+}
+
+.scrolling-container {
+  display: flex; /* Use flexbox to align images in a line */
+  animation: scroll-left 55s linear infinite; /* Continuous scrolling animation */
+  white-space: nowrap; /* Ensure images stay in a single line */
+}
+
+.images-wrapper {
+  display: flex; /* Align images in a row */
+}
+
+#games-images img {
+  height: auto; /* Maintain aspect ratio */
+  width: 200px; /* Adjust width as needed */
+  margin-right: 0; /* Remove margin between images */
+  border-radius: 0; /* Ensure no rounded edges */
+
+}
+
+/* Define the animation for scrolling left */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0); /* Start at the original position */
+  }
+  100% {
+    transform: translateX(-50%); /* Move left by 50% of the container’s width */
+  }
+}
+
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 125px); /* Adjust card width */
+  grid-template-rows: repeat(4, 125px); /* Adjust card height */
+  gap: 10px;
+}
+
+.card {
+  width: 125px; /* Adjust card width */
+  height: 125px; /* Adjust card height */
+  background-color: #fff;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.card-front {
+  background-color: #348081; /* Front card color */
+}
+
+.card-back {
+  background-color: #2e3a3f;
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 100%; /* Ensure the image covers the entire card */
+  height: 100%; /* Ensure the image covers the entire card */
+  object-fit: cover; /* Maintain aspect ratio and fill the card */
+  border-radius: 5px; /* Optional: add some rounding to image corners */
+}
+
+#restart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+
+
+
